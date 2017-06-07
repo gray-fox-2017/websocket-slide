@@ -38,6 +38,7 @@ listenUrlHash.on('value', function(hashValue) {
 
 // Check access
 var form = $('form.login');
+var formPlace = $('loginPlace');
 var secretTextBox = form.find('input[type=text]');
 
 form.submit(function(e) {
@@ -45,6 +46,7 @@ form.submit(function(e) {
   var key = secretTextBox.val().trim();
   console.log(key);
   form.hide();
+  formPlace.hide();
   if (key === 'tsubasa') {
     // If hash is change -> rewrite firebase
     $(window).on('hashchange', function (){
