@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/white.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+    <div class="login">
+      <form class="login-form">
+        <h2><strong>What's your secret key?</strong></h2>
+        <input type="text" placeholder="Please enter your secret key!" value="" class="key" id="key" />
+        <input type="submit" onclick="sendKey()" value="➡" class="submit" />
+      </form>
+    </div>
+    <div class="reveal">
+    	<div class="slides">
+    		<section data-background="img/1.jpg">Single Horizontal Slide</section>
+    		<section>
+    			<section data-background="img/2.jpg">Vertical Slide 1</section>
+    			<section data-background="img/3.jpg">Vertical Slide 2</section>
+    		</section>
+    	</div>
+    </div>
+		<script src="reveal.js/js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+        history: true       // Every slide will change the URL
+      });
+		</script>
+    <script type="text/javascript" src="broadcaster.js"></script>
+	</body>
+</html>

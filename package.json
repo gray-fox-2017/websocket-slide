@@ -1,0 +1,23 @@
+{
+  "name": "websocket-slide",
+  "version": "1.0.0",
+  "description": "Realtime Slide using Firebase",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Priambodo-Kurniawan/websocket-slide.git"
+  },
+  "author": "Priambodo-Kurniawan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Priambodo-Kurniawan/websocket-slide/issues"
+  },
+  "homepage": "https://github.com/Priambodo-Kurniawan/websocket-slide#readme",
+  "dependencies": {
+    "firebase": "^4.1.1",
+    "nodemon": "^1.11.0"
+  }
+}
