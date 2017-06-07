@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>WebSocket</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style media="screen">
+      img {
+        min-height: 50vh;
+      }
+      ul {
+        list-style: none;
+      }
+      ul li {
+        padding-top: 10px;
+      }
+      #sidebar-wrapper{
+        background-color: blac;
+        min-height: 100vh;
+        padding-top: 3rem;
+      }
+    </style>
+    <script src="https://unpkg.com/vue" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="app">
+        <div class="row">
+          <div id="sidebar-wrapper" class="col-md-3">
+            <ul class="sidebar-nav">
+              <li class="sidebar-brand">
+                <a @click="nextslide">Next</a>
+              </li>
+              <li>
+                <a @click="previousslide" href="#">Previous</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-7">
+            <img :src="'img/'+index[index_slide]" alt=""/>
+          </div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+  </body>
+</html>
