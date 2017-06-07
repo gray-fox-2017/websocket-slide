@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<h2 class="w3-center">Manual Slideshow</h2>
+
+  <div class="w3-content w3-display-container">
+    <img class="mySlides" src="img/img_fjords.jpg" style="width:100%">
+    <img class="mySlides" src="img/img_lights.jpg" style="width:100%">
+    <img class="mySlides" src="img/img_mountains.jpg" style="width:100%">
+    <img class="mySlides" src="img/img_forest.jpg" style="width:100%">
+
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, 'left')">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, 'right')">&#10095;</button>
+  </div>
+
+  <h1 id="test"></h1>
+</body>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB3F5Gwh-txHI8XohOsJJmuKN7_Js-nETA",
+    authDomain: "slider-9bc30.firebaseapp.com",
+    databaseURL: "https://slider-9bc30.firebaseio.com",
+    projectId: "slider-9bc30",
+    storageBucket: "slider-9bc30.appspot.com",
+    messagingSenderId: "964472202634"
+  };
+  firebase.initializeApp(config);
+  // Initialize Firebase
+
+
+
+
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  var starCountRef = firebase.database().ref().child('slider');
+  starCountRef.on('value', function(snapshot) {
+    if(snapshot.val() == 'right'){
+      showDivs(slideIndex += 1);
+      firebase.database().ref().set({
+        slider:null
+      });
+    } else if(snapshot.val() == 'left'){
+      showDivs(slideIndex += -1);
+      firebase.database().ref().set({
+        slider:null
+      });
+    }
+  });
+
+  function plusDivs(n, value) {
+    firebase.database().ref().set({
+      slider:value
+    });
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+  }
+
+
+</script>
+</html>
