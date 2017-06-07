@@ -1,0 +1,22 @@
+{
+  "name": "websocket-slide-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uciarahito/websocket-slide-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uciarahito/websocket-slide-1/issues"
+  },
+  "homepage": "https://github.com/uciarahito/websocket-slide-1#readme",
+  "dependencies": {
+    "firebase": "^4.1.1"
+  }
+}
